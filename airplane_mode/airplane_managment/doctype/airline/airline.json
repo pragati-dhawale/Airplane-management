@@ -8,7 +8,8 @@
  "field_order": [
   "funding_year",
   "customer_care_number",
-  "headquaters"
+  "headquaters",
+  "website"
  ],
  "fields": [
   {
@@ -29,6 +30,11 @@
    "in_list_view": 1,
    "label": "Headquaters",
    "reqd": 1
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -38,7 +44,7 @@
    "link_fieldname": "Airline"
   }
  ],
- "modified": "2024-04-02 19:39:43.275401",
+ "modified": "2024-04-18 11:40:34.941053",
  "modified_by": "Administrator",
  "module": "Airplane Managment",
  "name": "Airline",

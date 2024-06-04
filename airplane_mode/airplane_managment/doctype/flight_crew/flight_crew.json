@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{Flight Crew}-{####}",
+ "creation": "2024-04-26 18:40:25.335292",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "flight_crew_members_section",
+  "name1",
+  "possition",
+  "contact_information"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "possition",
+   "fieldtype": "Data",
+   "label": "Possition"
+  },
+  {
+   "fieldname": "contact_information",
+   "fieldtype": "Data",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "flight_crew_members_section",
+   "fieldtype": "Section Break",
+   "label": "Flight Crew Members"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-11 15:45:23.351937",
+ "modified_by": "Administrator",
+ "module": "Airplane Managment",
+ "name": "Flight Crew",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

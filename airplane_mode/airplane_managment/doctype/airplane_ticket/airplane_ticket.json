@@ -8,22 +8,27 @@
  "field_order": [
   "section_break_u1ut",
   "passenger",
+  "status",
   "source_airport",
   "source_airport_code",
-  "destination_airport",
-  "destination_airport_code",
-  "status",
   "column_break_ypdh",
   "flight",
-  "departure_date",
-  "departure_time",
-  "duration_of_flight",
-  "amended_from",
+  "seat",
+  "destination_airport",
+  "destination_airport_code",
+  "gate_number",
   "section_break_jaxh",
   "add_ons",
   "section_break_jqod",
   "flight_price",
-  "total_amount"
+  "column_break_kahr",
+  "total_amount",
+  "departure_details_section",
+  "departure_date",
+  "departure_time",
+  "column_break_fbxl",
+  "duration_of_flight",
+  "amended_from"
  ],
  "fields": [
   {
@@ -49,23 +54,24 @@
    "reqd": 1
   },
   {
+   "fetch_from": "flight.source_airport",
    "fieldname": "source_airport",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Source Airport",
-   "options": "Airport",
-   "reqd": 1
+   "options": "Airport"
   },
   {
+   "fetch_from": "flight.destination_airport",
    "fieldname": "destination_airport",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Destination Airport ",
    "options": "Airport",
-   "reqd": 1
+   "read_only": 1
   },
   {
-   "fetch_from": "destination_airport.code",
+   "fetch_from": "flight.destination_airport_code",
    "fieldname": "destination_airport_code",
    "fieldtype": "Read Only",
    "label": "Destination Airport Code"
@@ -75,7 +81,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Flight",
-   "options": "Airplane",
+   "options": "Airplane Flight",
    "reqd": 1
   },
   {
@@ -83,27 +89,27 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "flight.date_of_departure",
    "fieldname": "departure_date",
    "fieldtype": "Date",
-   "label": "Departure Date",
-   "reqd": 1
+   "label": "Departure Date"
   },
   {
+   "fetch_from": "flight.time_of_departure",
    "fieldname": "departure_time",
    "fieldtype": "Time",
-   "label": "Departure Time",
-   "reqd": 1
+   "label": "Departure Time"
   },
   {
+   "fetch_from": "flight.duration",
    "fieldname": "duration_of_flight",
    "fieldtype": "Duration",
-   "label": "Duration Of Flight",
-   "reqd": 1
+   "label": "Duration Of Flight"
   },
   {
-   "fetch_from": "source_airport.code",
+   "fetch_from": "flight.source_airport_code",
    "fieldname": "source_airport_code",
-   "fieldtype": "Read Only",
+   "fieldtype": "Data",
    "label": "Source Airport Code",
    "reqd": 1
   },
@@ -113,12 +119,12 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Booked\nChecked-In\nBoarded",
-   "reqd": 1
+   "options": "Booked\nCompleted\nBoarded"
   },
   {
    "fieldname": "section_break_jaxh",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Add-Ons"
   },
   {
    "fieldname": "add_ons",
@@ -129,22 +135,47 @@
   {
    "fieldname": "flight_price",
    "fieldtype": "Currency",
-   "label": "Flight Price"
+   "label": "Flight Price",
+   "reqd": 1
   },
   {
    "fieldname": "total_amount",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "label": "Total Amount"
   },
   {
    "fieldname": "section_break_jqod",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "seat",
+   "fieldtype": "Data",
+   "label": "Seat",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kahr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure_details_section",
+   "fieldtype": "Section Break",
+   "label": "Departure Details"
+  },
+  {
+   "fieldname": "column_break_fbxl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-06 10:59:16.945520",
+ "modified": "2024-04-27 12:13:51.443105",
  "modified_by": "Administrator",
  "module": "Airplane Managment",
  "name": "Airplane Ticket",
@@ -160,6 +191,41 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Flight Crew Member",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Travel Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
    "share": 1,
    "write": 1
   }

@@ -8,7 +8,9 @@
  "field_order": [
   "model",
   "airline",
-  "capacity"
+  "capacity",
+  "company_logo",
+  "initial_audit_completed"
  ],
  "fields": [
   {
@@ -29,13 +31,27 @@
   {
    "fieldname": "capacity",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Capacity",
    "reqd": 1
+  },
+  {
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Company Logo"
+  },
+  {
+   "default": "0",
+   "fieldname": "initial_audit_completed",
+   "fieldtype": "Check",
+   "label": "Initial Audit Completed "
   }
  ],
+ "image_field": "company_logo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-02 16:27:31.841980",
+ "modified": "2024-04-20 21:56:59.451197",
  "modified_by": "Administrator",
  "module": "Airplane Managment",
  "name": "Airplane",
@@ -51,6 +67,16 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
    "share": 1,
    "write": 1
   }

@@ -42,7 +42,7 @@ app_license = "mit"
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+home_page = "airline"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -231,3 +231,17 @@ app_license = "mit"
 
 #  Adding the code for the status checking here 
 
+
+
+
+# import frappe
+
+# def before_submit(doc, method):
+#     # Check if the status is not equal to "Boarded"
+#     if doc.status != "Boarded":
+#         # Throw an error with a message
+#         frappe.throw("Airplane Ticket can only be submitted when status is Boarded")
+
+# website_route_rules = [
+#   {"from_route": "/view_details/<flight>", "to_route": "flights/view_details"}]
+fixtures=["Notification"]
